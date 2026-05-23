@@ -4,6 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ichthus — Consultoria Industrial</title>
+<template id="__bundler_thumbnail" data-bg-color="#0a0a0a">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0a0a0a"/>
+    <text x="600" y="480" font-family="Georgia, serif" font-style="italic" font-size="320" fill="#d4172e" text-anchor="middle" letter-spacing="20">ΙΧ</text>
+    <path d="M 460 600 Q 540 632, 620 664 Q 740 596, 840 612 Q 900 624, 920 680 Q 880 656, 820 652 Q 720 644, 620 668 Q 540 692, 480 720 Q 540 680, 552 644 Q 540 620, 460 600 Z" fill="#d4172e" opacity="0.6"/>
+  </svg>
+</template>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -908,13 +915,13 @@
   .reveal.delay-2{transition-delay:.24s;}
   .reveal.delay-3{transition-delay:.36s;}
 
-  /* ============ RESPONSIVE ============ */
+  /* ============ RESPONSIVE — TABLET ============ */
   @media (max-width:1024px){
     .container{padding:0 32px;}
     nav, nav.scrolled{padding:18px 32px;}
     .hero-meta{left:32px;right:32px;}
-    .hero-content{grid-template-columns:1fr;gap:48px;}
-    .hero-cta-row{flex-direction:column;align-items:flex-start;}
+    .hero-content{grid-template-columns:1fr;gap:40px;}
+    .hero-cta-row{flex-direction:column;align-items:flex-start;gap:28px;}
     .hero-fish{width:200px;}
     .nav-links{display:none;}
     .section-head{grid-template-columns:1fr;gap:24px;margin-bottom:60px;}
@@ -925,12 +932,162 @@
     .method-track{padding-left:36px;}
     .step{grid-template-columns:1fr;gap:24px;padding:48px 0;}
     .step-num{font-size:64px;}
-    .stats-grid{grid-template-columns:repeat(2, 1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
     .stat{padding:24px;border-left:none;border-top:1px solid var(--line-2);}
+    .stat:first-child,.stat:nth-child(2){border-top:none;}
+    .stat:nth-child(odd){border-left:none;}
     .cta-grid{grid-template-columns:1fr;gap:40px;}
+    .cta-contact a{font-size:18px;}
     .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
     .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
     section{padding:96px 0;}
+  }
+
+  /* ============ RESPONSIVE — MOBILE ============ */
+  @media (max-width:640px){
+    .container{padding:0 20px;}
+
+    /* Nav */
+    nav, nav.scrolled{padding:14px 20px;}
+    .nav-logo-text .gk{display:none;}
+    .nav-cta{padding:9px 14px;font-size:10px;letter-spacing:.14em;}
+
+    /* Hero */
+    .hero{padding:100px 0 70px;min-height:auto;}
+    .hero-meta{
+      left:20px;right:20px;top:80px;
+      flex-direction:column;gap:4px;align-items:flex-start;
+    }
+    .hero-meta span:last-child{display:none;}
+    .hero-greek span:nth-child(1){font-size:clamp(120px,40vw,200px);top:0;left:-2vw;}
+    .hero-greek span:nth-child(2){display:none;}
+    .hero-content{gap:32px;}
+    .hero-eyebrow{font-size:10px;margin-bottom:28px;gap:12px;}
+    .hero-eyebrow::before{width:28px;}
+    .hero-title{
+      font-size:clamp(52px,14vw,72px);
+      line-height:.9;
+      margin-bottom:28px;
+    }
+    .hero-side{padding-bottom:0;}
+    .hero-lead{font-size:15px;margin-bottom:28px;}
+    .hero-author-info{font-size:12px;}
+    .hero-author-info small{font-size:10px;}
+
+    /* Hero CTA row */
+    .hero-cta-row{
+      margin-top:48px;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:24px;
+    }
+    .hero-fish{width:140px;height:44px;}
+    .hero-actions{
+      flex-direction:column;
+      width:100%;
+      gap:10px;
+    }
+    .btn-primary,.btn-ghost{
+      width:100%;
+      justify-content:center;
+      padding:16px 20px;
+      font-size:11px;
+    }
+
+    /* Scroll cue */
+    .scroll-cue{display:none;}
+
+    /* Marquee */
+    .marquee{padding:20px 0;}
+    .marquee-item{font-size:22px;gap:48px;}
+
+    /* Sections */
+    section{padding:64px 0;}
+    .section-head{margin-bottom:40px;}
+    .section-title{font-size:clamp(32px,9vw,48px);}
+
+    /* Manifesto */
+    .manifesto-grid{gap:24px;}
+    .manifesto-label{font-size:10px;}
+    .manifesto-text{font-size:clamp(22px,6.5vw,32px);}
+    .manifesto-text::first-letter{font-size:1.2em;}
+    .manifesto-side{font-size:12px;padding-top:14px;}
+
+    /* Serviços */
+    .services-grid{gap:1px;}
+    .service{padding:36px 20px 32px;}
+    .service-head{margin-bottom:28px;padding-bottom:16px;}
+    .service-num{font-size:36px;}
+    .service-title{font-size:28px;margin-bottom:16px;}
+    .service-desc{font-size:14px;margin-bottom:24px;}
+    .service-list li{font-size:11px;}
+
+    /* Método */
+    .method-track{
+      padding-left:0;
+    }
+    .method-track::before,
+    .method-track::after{display:none;}
+    .step{
+      padding:36px 0;
+      gap:20px;
+    }
+    .step::before{display:none;}
+    .step-meta{font-size:10px;}
+    .step-num{font-size:52px;margin-bottom:8px;}
+    .step-title{font-size:26px;margin-bottom:14px;}
+    .step-desc{font-size:14px;margin-bottom:18px;}
+    .step-detail{font-size:11px;}
+
+    /* Stats */
+    .stats{padding:60px 0;}
+    .stats-grid{
+      grid-template-columns:repeat(2,1fr);
+      gap:0;
+    }
+    .stat{
+      padding:24px 16px;
+      border-top:1px solid var(--line-2);
+      border-left:none;
+    }
+    .stat:first-child,.stat:nth-child(2){border-top:none;}
+    .stat:nth-child(odd){border-right:1px solid var(--line-2);}
+    .stat-num{font-size:clamp(48px,13vw,72px);}
+    .stat-label{font-size:10px;letter-spacing:.1em;}
+
+    /* CTA */
+    .cta{padding:80px 0 60px;}
+    .cta::before{
+      font-size:clamp(80px,24vw,120px);
+      bottom:-20px;right:-10px;
+      opacity:.7;
+    }
+    .cta-grid{gap:32px;}
+    .cta-title{font-size:clamp(44px,12vw,64px);}
+    .cta-lead{font-size:15px;margin-bottom:28px;}
+    .cta-contact a{
+      font-size:15px;
+      word-break:break-all;
+    }
+    .cta-contact a small{display:none;}
+    .section-head[style]{margin-bottom:32px !important;}
+
+    /* Footer */
+    .footer-grid{
+      grid-template-columns:1fr;
+      gap:36px;
+      margin-bottom:48px;
+    }
+    .footer-tag{font-size:13px;}
+    .footer-author{font-size:11px;}
+    .footer-bottom{
+      flex-direction:column;
+      gap:10px;
+      text-align:center;
+      font-size:9px;
+    }
+    .footer-bottom b{display:block;}
+    footer{padding:48px 0 28px;}
   }
 </style>
 </head>
@@ -1264,7 +1421,7 @@
         <p class="cta-lead">
           Marque uma conversa de 45 minutos com Claudemir Menezes. Sem compromisso — você sai com pelo menos uma leitura nova sobre a operação e a gestão do seu negócio.
         </p>
-        <a href="/cdn-cgi/l/email-protection#88ebe7e6fce9fce7c8e1ebe0fce0fdfba6ebe7e5a6eafa" class="btn-primary">
+        <a href="/cdn-cgi/l/email-protection#85e6eaebf1e4f1eac5ece6edf1edf0f6abe6eae8abe7f7" class="btn-primary">
           Marcar conversa
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
             <path d="M1 6h14m0 0L10 1m5 5l-5 5" stroke="currentColor" stroke-width="1.5"/>
@@ -1272,8 +1429,8 @@
         </a>
       </div>
       <div class="cta-contact">
-        <a href="/cdn-cgi/l/email-protection#8eede1e0faeffae1cee7ede6fae6fbfda0ede1e3a0ecfc">
-          <span class="__cf_email__" data-cfemail="96f5f9f8e2f7e2f9d6fff5fee2fee3e5b8f5f9fbb8f4e4">[email&#160;protected]</span>
+        <a href="/cdn-cgi/l/email-protection#21424e4f5540554e61484249554954520f424e4c0f4353">
+          <span class="__cf_email__" data-cfemail="12717d7c6673667d527b717a667a67613c717d7f3c7060">[email&#160;protected]</span>
           <small>E-MAIL ↗</small>
         </a>
         <a href="tel:+5511986881917">
@@ -1315,7 +1472,7 @@
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
-        <a href="/cdn-cgi/l/email-protection#3655595842574259765f555e425e43451855595b185444"><span class="__cf_email__" data-cfemail="1c7f7372687d68735c757f746874696f327f7371327e6e">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#5734383923362338173e343f233f22247934383a793525"><span class="__cf_email__" data-cfemail="14777b7a6075607b547d777c607c61673a777b793a7666">[email&#160;protected]</span></a>
         <a href="tel:+5511986881917">+55 (11) 98688-1917</a>
         <a href="#">Mogi das Cruzes, SP</a>
       </div>
